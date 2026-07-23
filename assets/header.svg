@@ -4,7 +4,7 @@
     <pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse">
       <path d="M50 0L0 0 0 50" fill="none" stroke="#161B22" stroke-width="0.6"/>
     </pattern>
-    <!-- Scanner beam gradient -->
+    <!-- Scanner beam gradient --> 
     <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="#3DDC97" stop-opacity="0"/>
       <stop offset="30%"  stop-color="#3DDC97" stop-opacity="0.2"/>
