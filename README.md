@@ -309,25 +309,22 @@ STATUS     →  COMPLETE
 
 <table>
 <tr>
-<td align="center" width="50%">
+<td align="center" width="50%" valign="top">
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MunagalaSaiHanish&show_icons=true&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=3DDC97&icon_color=58A6FF&text_color=E6EDF3&ring_color=3DDC97&include_all_commits=true&count_private=true)](https://github.com/MunagalaSaiHanish)
-
-</td>
-<td align="center" width="50%">
-
-[![GitHub Streak](https://streak-stats.demolab.com/?user=MunagalaSaiHanish&theme=github-dark-blue&hide_border=true&background=0D1117&ring=3DDC97&fire=3DDC97&currStreakLabel=3DDC97&sideLabels=7D8590&dates=7D8590&stroke=21262D)](https://github.com/MunagalaSaiHanish)
+[![GitHub Stats](https://github-stats-extended.vercel.app/api?username=MunagalaSaiHanish&show_icons=true&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=3DDC97&icon_color=58A6FF&text_color=E6EDF3&ring_color=3DDC97&include_all_commits=true)](https://github.com/MunagalaSaiHanish)
 
 </td>
-</tr>
-<tr>
-<td align="center" colspan="2">
+<td align="center" width="50%" valign="top">
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MunagalaSaiHanish&layout=compact&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=3DDC97&text_color=E6EDF3&langs_count=8)](https://github.com/MunagalaSaiHanish)
+[![Top Languages](https://github-stats-extended.vercel.app/api/top-langs/?username=MunagalaSaiHanish&layout=compact&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=3DDC97&text_color=E6EDF3&langs_count=8)](https://github.com/MunagalaSaiHanish)
 
 </td>
 </tr>
 </table>
+
+<br/>
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=MunagalaSaiHanish&bg_color=0D1117&color=3DDC97&line=3DDC97&point=58A6FF&area=true&hide_border=true&area_color=0D1117)](https://github.com/MunagalaSaiHanish)
 
 </div>
 
