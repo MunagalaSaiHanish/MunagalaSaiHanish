@@ -106,107 +106,44 @@
   <circle r="2" fill="#3DDC97"><animateMotion dur="4.2s" repeatCount="indefinite" path="M4,240 L68,240 L68,262 L155,262"/><animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;0.05;0.2;0.85;1" dur="4.2s" repeatCount="indefinite"/></circle>
   <circle r="1.5" fill="#3DDC97"><animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M4,205 L45,205 L45,220 L100,220"/><animate attributeName="opacity" values="0;0;0.8;0.8;0" keyTimes="0;0.05;0.2;0.85;1" dur="3s" repeatCount="indefinite" begin="1.5s"/></circle>
 
-  <!-- ===================== CORRECT TYPING + MOVING CURSOR + RIGHT-TO-LEFT BACKSPACE ===================== -->
-  <!-- Total cycle = 6.5 seconds -->
-
+  <!-- ===================== NAME + CURSOR ===================== -->
   <g font-family="Courier New,Courier,monospace" font-size="38" font-weight="900" fill="#E6EDF3" filter="url(#gf1)">
-    <!-- MUNAGALA -->
-    <text x="28"  y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.04;0.46;0.92;1" dur="6.5s" repeatCount="indefinite"/>M
-    </text>
-    <text x="51"  y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.06;0.46;0.90;1" dur="6.5s" repeatCount="indefinite"/>U
-    </text>
-    <text x="74"  y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.08;0.46;0.88;1" dur="6.5s" repeatCount="indefinite"/>N
-    </text>
-    <text x="97"  y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.10;0.46;0.86;1" dur="6.5s" repeatCount="indefinite"/>A
-    </text>
-    <text x="120" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.10;0.12;0.46;0.84;1" dur="6.5s" repeatCount="indefinite"/>G
-    </text>
-    <text x="143" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.14;0.46;0.82;1" dur="6.5s" repeatCount="indefinite"/>A
-    </text>
-    <text x="166" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.14;0.16;0.46;0.80;1" dur="6.5s" repeatCount="indefinite"/>L
-    </text>
-    <text x="189" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.18;0.46;0.78;1" dur="6.5s" repeatCount="indefinite"/>A
-    </text>
-
-    <!-- space -->
-    <text x="212" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.18;0.20;0.46;0.76;1" dur="6.5s" repeatCount="indefinite"/> 
-    </text>
-
-    <!-- SAI -->
-    <text x="235" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.22;0.46;0.74;1" dur="6.5s" repeatCount="indefinite"/>S
-    </text>
-    <text x="258" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.22;0.24;0.46;0.72;1" dur="6.5s" repeatCount="indefinite"/>A
-    </text>
-    <text x="281" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.46;0.70;1" dur="6.5s" repeatCount="indefinite"/>I
-    </text>
-
-    <!-- space -->
-    <text x="304" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.26;0.28;0.46;0.68;1" dur="6.5s" repeatCount="indefinite"/> 
-    </text>
-
-    <!-- HANISH -->
-    <text x="327" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.30;0.46;0.66;1" dur="6.5s" repeatCount="indefinite"/>H
-    </text>
-    <text x="350" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.30;0.32;0.46;0.64;1" dur="6.5s" repeatCount="indefinite"/>A
-    </text>
-    <text x="373" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.32;0.34;0.46;0.62;1" dur="6.5s" repeatCount="indefinite"/>N
-    </text>
-    <text x="396" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.34;0.36;0.46;0.60;1" dur="6.5s" repeatCount="indefinite"/>I
-    </text>
-    <text x="419" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.36;0.38;0.46;0.58;1" dur="6.5s" repeatCount="indefinite"/>S
-    </text>
-    <text x="442" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.38;0.40;0.46;0.56;1" dur="6.5s" repeatCount="indefinite"/>H
-    </text>
+    <text x="28"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.04;0.45;0.93;1" dur="6.5s" repeatCount="indefinite"/>M</text>
+    <text x="51"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.06;0.45;0.91;1" dur="6.5s" repeatCount="indefinite"/>U</text>
+    <text x="74"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.08;0.45;0.89;1" dur="6.5s" repeatCount="indefinite"/>N</text>
+    <text x="97"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.10;0.45;0.87;1" dur="6.5s" repeatCount="indefinite"/>A</text>
+    <text x="120" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.10;0.12;0.45;0.85;1" dur="6.5s" repeatCount="indefinite"/>G</text>
+    <text x="143" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.14;0.45;0.83;1" dur="6.5s" repeatCount="indefinite"/>A</text>
+    <text x="166" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.14;0.16;0.45;0.81;1" dur="6.5s" repeatCount="indefinite"/>L</text>
+    <text x="189" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.18;0.45;0.79;1" dur="6.5s" repeatCount="indefinite"/>A</text>
+    <text x="212" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.18;0.20;0.45;0.77;1" dur="6.5s" repeatCount="indefinite"/> </text>
+    <text x="235" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.22;0.45;0.75;1" dur="6.5s" repeatCount="indefinite"/>S</text>
+    <text x="258" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.22;0.24;0.45;0.73;1" dur="6.5s" repeatCount="indefinite"/>A</text>
+    <text x="281" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.45;0.71;1" dur="6.5s" repeatCount="indefinite"/>I</text>
+    <text x="304" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.26;0.28;0.45;0.69;1" dur="6.5s" repeatCount="indefinite"/> </text>
+    <text x="327" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.30;0.45;0.67;1" dur="6.5s" repeatCount="indefinite"/>H</text>
+    <text x="350" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.30;0.32;0.45;0.65;1" dur="6.5s" repeatCount="indefinite"/>A</text>
+    <text x="373" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.32;0.34;0.45;0.63;1" dur="6.5s" repeatCount="indefinite"/>N</text>
+    <text x="396" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.34;0.36;0.45;0.61;1" dur="6.5s" repeatCount="indefinite"/>I</text>
+    <text x="419" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.36;0.38;0.45;0.59;1" dur="6.5s" repeatCount="indefinite"/>S</text>
+    <text x="442" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.38;0.40;0.45;0.57;1" dur="6.5s" repeatCount="indefinite"/>H</text>
   </g>
 
-  <!-- .AI (green) -->
   <g font-family="Courier New,Courier,monospace" font-size="38" font-weight="900" fill="#3DDC97" filter="url(#gf2)">
-    <text x="465" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40;0.42;0.46;0.54;1" dur="6.5s" repeatCount="indefinite"/>.
-    </text>
-    <text x="488" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.44;0.46;0.52;1" dur="6.5s" repeatCount="indefinite"/>A
-    </text>
-    <text x="511" y="168" opacity="0">
-      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.44;0.46;0.46;0.50;1" dur="6.5s" repeatCount="indefinite"/>I
-    </text>
+    <text x="465" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40;0.42;0.45;0.55;1" dur="6.5s" repeatCount="indefinite"/>.</text>
+    <text x="488" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.44;0.45;0.53;1" dur="6.5s" repeatCount="indefinite"/>A</text>
+    <text x="511" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.44;0.46;0.45;0.51;1" dur="6.5s" repeatCount="indefinite"/>I</text>
   </g>
 
-  <!-- MOVING CURSOR -->
-  <rect y="128" width="11" height="42" fill="#3DDC97">
-    <animate attributeName="x"
-      values="28;51;74;97;120;143;166;189;212;235;258;281;304;327;350;373;396;419;442;465;488;511;534;
-              534;534;
-              511;488;465;442;419;396;373;350;327;304;281;258;235;212;189;166;143;120;97;74;51;28;
-              28"
-      keyTimes="0;0.04;0.06;0.08;0.10;0.12;0.14;0.16;0.18;0.20;0.22;0.24;0.26;0.28;0.30;0.32;0.34;0.36;0.38;0.40;0.42;0.44;0.46;
-                0.47;0.58;
-                0.60;0.62;0.64;0.66;0.68;0.70;0.72;0.74;0.76;0.78;0.80;0.82;0.84;0.86;0.88;0.90;0.92;0.94;0.96;0.98;
-                1"
+  <!-- CURSOR - Fixed and working -->
+  <rect x="28" y="128" width="11" height="42" fill="#3DDC97">
+    <animate 
+      attributeName="x"
+      values="28;51;74;97;120;143;166;189;212;235;258;281;304;327;350;373;396;419;442;465;488;511;534;534;534;511;488;465;442;419;396;373;350;327;304;281;258;235;212;189;166;143;120;97;74;51;28;28"
+      keyTimes="0;0.04;0.06;0.08;0.10;0.12;0.14;0.16;0.18;0.20;0.22;0.24;0.26;0.28;0.30;0.32;0.34;0.36;0.38;0.40;0.42;0.44;0.46;0.47;0.58;0.60;0.62;0.64;0.66;0.68;0.70;0.72;0.74;0.76;0.78;0.80;0.82;0.84;0.86;0.88;0.90;0.92;0.94;0.96;0.98;1;1"
       dur="6.5s"
       repeatCount="indefinite"
       calcMode="discrete"/>
-    
-    <!-- Blinking -->
     <animate attributeName="opacity" values="1;1;0;0" dur="1.05s" repeatCount="indefinite"/>
   </rect>
 
