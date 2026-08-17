@@ -1,6 +1,6 @@
 <!--
   ╔══════════════════════════════════════════════════════════════╗
-  ║  HANISH.AI — GitHub Profile README                          ║
+  ║  HANISH.AI — GitHub Profile README                           ║
   ║  Design: Futuristic AI Engineering Identity                  ║
   ║  Author: MunagalaSaiHanish                                   ║
   ╚══════════════════════════════════════════════════════════════╝
@@ -8,7 +8,7 @@
 
 <div align="center">
 
-<img src="./assets/header.svg" alt="HANISH.AI — Emerging AI Engineer" width="100%"/>
+<img src="./assets/header.svg" alt="MUNAGALA SAI HANISH.AI — Emerging AI Engineer" width="100%"/>
 
 <br/>
 
@@ -70,14 +70,14 @@ I'm not interested in calling AI APIs and calling it AI Engineering. I'm interes
 ## `◈ CURRENT_MISSION`
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│  MISSION CONTROL                                    [ ACTIVE ]│
+┌──────────────────────────────────────────────────────────────┐__
+│  MISSION CONTROL                                 [ ACTIVE ]   __| + 
 ├──────────────────────────────────────────────────────────────┤
 │  →  Master Agentic AI system design                          │
 │  →  Build RecSen AI into a production-grade incident agent   │
 │  →  Engineer production-quality RAG systems (Lumixa AI)      │
-│  →  Learn advanced retrieval + LLM evaluation                │
-│  →  Explore Robotics + embodied AI                            │
+│  →  Learn advanced retrieval + LLM evaluation                │__
+│  →  Explore Robotics + embodied AI                            __│ -
 │  →  Become a production-ready AI Engineer                    │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -265,31 +265,31 @@ STATUS     →  COMPLETE
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  ML  →  NLP  →  RAG                       [ COMPLETED ]     │
-│  Chunking · Embeddings · Vector Search · Semantic Retrieval  │
+│  Chunking · Embeddings · Vector Search · Semantic Retrieval │
 └────────────────────────────┬────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  ADVANCED RETRIEVAL + LLM ENGINEERING     [ ACTIVE ]         │
-│  Retrieval Optimization · Vector DBs · Prompt Engineering     │
+│  ADVANCED RETRIEVAL + LLM ENGINEERING     [ ACTIVE ]        │
+│  Retrieval Optimization · Vector DBs · Prompt Engineering   │
 └────────────────────────────┬────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  AI AGENTS                                [ ACTIVE ]         │
-│  Agentic Loops · Tool Use · Structured Decisions (RecSen AI) │
+│  AI AGENTS                                [ ACTIVE ]        │
+│  Agentic Loops · Tool Use · Structured Decisions (RecSen AI)│
 └────────────────────────────┬────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  EVALUATION + GUARDRAILS + MULTI-AGENT     [ NEXT ]          │
-│  Benchmarking · RAGAS · Output Validation · Safety Layers     │
+│  EVALUATION + GUARDRAILS + MULTI-AGENT     [ NEXT ]         │
+│  Benchmarking · RAGAS · Output Validation · Safety Layers   │
 └────────────────────────────┬────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  PRODUCTION AI  →  ROBOTICS + AUTONOMY     [ NEXT ]          │
-│  LLMOps · Monitoring · Deployment · Embodied Intelligence     │
+│  PRODUCTION AI  →  ROBOTICS + AUTONOMY     [ NEXT ]         │
+│  LLMOps · Monitoring · Deployment · Embodied Intelligence   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
