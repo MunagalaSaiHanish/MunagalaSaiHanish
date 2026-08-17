@@ -1,366 +1,186 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
   <defs>
+    <!-- Grid pattern -->
     <pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse">
       <path d="M50 0L0 0 0 50" fill="none" stroke="#161B22" stroke-width="0.6"/>
     </pattern>
+    <!-- Scanner beam gradient --> 
     <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3DDC97" stop-opacity="0"/>
-      <stop offset="30%" stop-color="#3DDC97" stop-opacity="0.2"/>
-      <stop offset="50%" stop-color="#3DDC97" stop-opacity="0.5"/>
-      <stop offset="70%" stop-color="#3DDC97" stop-opacity="0.2"/>
+      <stop offset="0%"   stop-color="#3DDC97" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#3DDC97" stop-opacity="0.2"/>
+      <stop offset="50%"  stop-color="#3DDC97" stop-opacity="0.5"/>
+      <stop offset="70%"  stop-color="#3DDC97" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#3DDC97" stop-opacity="0"/>
     </linearGradient>
+    <!-- Text glow (soft) -->
     <filter id="gf1" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <!-- Text glow (strong – for .AI) -->
     <filter id="gf2" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="8" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-
-    <style>
-      <![CDATA[
-        .cursor {
-          animation: blink 1.05s step-end infinite, moveCursor 6.8s infinite;
-        }
-        @keyframes moveCursor {
-          0%   { transform: translateX(0px); }
-          2%   { transform: translateX(23px); }
-          4%   { transform: translateX(46px); }
-          6%   { transform: translateX(69px); }
-          8%   { transform: translateX(92px); }
-          10%  { transform: translateX(115px); }
-          12%  { transform: translateX(138px); }
-          14%  { transform: translateX(161px); }
-          16%  { transform: translateX(184px); }
-          18%  { transform: translateX(207px); }
-          20%  { transform: translateX(230px); }
-          22%  { transform: translateX(253px); }
-          24%  { transform: translateX(276px); }
-          26%  { transform: translateX(299px); }
-          28%  { transform: translateX(322px); }
-          30%  { transform: translateX(345px); }
-          32%  { transform: translateX(368px); }
-          34%  { transform: translateX(391px); }
-          36%  { transform: translateX(414px); }
-          38%  { transform: translateX(437px); }
-          40%  { transform: translateX(460px); }
-          42%  { transform: translateX(483px); }
-          44%  { transform: translateX(506px); }
-          50%  { transform: translateX(506px); }
-          52%  { transform: translateX(483px); }
-          54%  { transform: translateX(460px); }
-          56%  { transform: translateX(437px); }
-          58%  { transform: translateX(414px); }
-          60%  { transform: translateX(391px); }
-          62%  { transform: translateX(368px); }
-          64%  { transform: translateX(345px); }
-          66%  { transform: translateX(322px); }
-          68%  { transform: translateX(299px); }
-          70%  { transform: translateX(276px); }
-          72%  { transform: translateX(253px); }
-          74%  { transform: translateX(230px); }
-          76%  { transform: translateX(207px); }
-          78%  { transform: translateX(184px); }
-          80%  { transform: translateX(161px); }
-          82%  { transform: translateX(138px); }
-          84%  { transform: translateX(115px); }
-          86%  { transform: translateX(92px); }
-          88%  { transform: translateX(69px); }
-          90%  { transform: translateX(46px); }
-          92%  { transform: translateX(23px); }
-          94%  { transform: translateX(0px); }
-          100% { transform: translateX(0px); }
-        }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50%      { opacity: 0; }
-        }
-      ]]>
-    </style>
   </defs>
 
-  <!-- BASE -->
+  <!-- ══════════════════════════ BASE ══════════════════════════ -->
   <rect width="900" height="300" fill="#0D1117"/>
   <rect width="900" height="300" fill="url(#g)" opacity="0.55"/>
-  
-  <!-- Scanner beam -->
+
+  <!-- Scanner beam (sweeps top→bottom every 5.5 s) -->
   <rect x="0" y="-60" width="900" height="120" fill="url(#sg)" opacity="0.8">
-    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,420" dur="5.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate"
+      from="0,0" to="0,420" dur="5.5s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- FRAME -->
+  <!-- ══════════════════════════ FRAME ══════════════════════════ -->
+  <!-- Left accent bar -->
   <rect x="0" y="0" width="4" height="300" fill="#3DDC97">
     <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
   </rect>
-  <line x1="4" y1="1" x2="896" y2="1" stroke="#21262D" stroke-width="1"/>
+  <!-- Border lines -->
+  <line x1="4" y1="1"   x2="896" y2="1"   stroke="#21262D" stroke-width="1"/>
   <line x1="4" y1="299" x2="896" y2="299" stroke="#21262D" stroke-width="1"/>
 
-  <!-- STATUS BAR -->
+  <!-- ══════════════════════════ STATUS BAR ══════════════════════════ -->
+  <!-- Blinking status dot -->
   <circle cx="28" cy="32" r="5" fill="#3DDC97">
     <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite"/>
-    <animate attributeName="r" values="4;6.5;4" dur="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="4;6.5;4"  dur="1.6s" repeatCount="indefinite"/>
   </circle>
   <text x="41" y="37" font-family="Courier New,Courier,monospace" font-size="11" fill="#3DDC97" letter-spacing="1.5">SYSTEM ONLINE</text>
-  <text x="640" y="37" font-family="Courier New,Courier,monospace" font-size="10" fill="#2D333B" letter-spacing="0.5">PID:2026 MEM:∞ GPU:ACTIVE MODEL:BUILDING</text>
+  <!-- Right status readout -->
+  <text x="640" y="37" font-family="Courier New,Courier,monospace" font-size="10" fill="#2D333B" letter-spacing="0.5">PID:2026  MEM:∞  GPU:ACTIVE  MODEL:BUILDING</text>
 
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
-  <defs>
-    <pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse">
-      <path d="M50 0L0 0 0 50" fill="none" stroke="#161B22" stroke-width="0.6"/>
-    </pattern>
-    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3DDC97" stop-opacity="0"/>
-      <stop offset="30%" stop-color="#3DDC97" stop-opacity="0.2"/>
-      <stop offset="50%" stop-color="#3DDC97" stop-opacity="0.5"/>
-      <stop offset="70%" stop-color="#3DDC97" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#3DDC97" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="gf1" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="gf2" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="8" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-
-    <style>
-      <![CDATA[
-        .cursor {
-          animation: blink 1.05s step-end infinite, moveCursor 6.8s infinite;
-        }
-        @keyframes moveCursor {
-          0%   { transform: translateX(0px); }
-          2%   { transform: translateX(23px); }
-          4%   { transform: translateX(46px); }
-          6%   { transform: translateX(69px); }
-          8%   { transform: translateX(92px); }
-          10%  { transform: translateX(115px); }
-          12%  { transform: translateX(138px); }
-          14%  { transform: translateX(161px); }
-          16%  { transform: translateX(184px); }
-          18%  { transform: translateX(207px); }
-          20%  { transform: translateX(230px); }
-          22%  { transform: translateX(253px); }
-          24%  { transform: translateX(276px); }
-          26%  { transform: translateX(299px); }
-          28%  { transform: translateX(322px); }
-          30%  { transform: translateX(345px); }
-          32%  { transform: translateX(368px); }
-          34%  { transform: translateX(391px); }
-          36%  { transform: translateX(414px); }
-          38%  { transform: translateX(437px); }
-          40%  { transform: translateX(460px); }
-          42%  { transform: translateX(483px); }
-          44%  { transform: translateX(506px); }
-          50%  { transform: translateX(506px); }
-          52%  { transform: translateX(483px); }
-          54%  { transform: translateX(460px); }
-          56%  { transform: translateX(437px); }
-          58%  { transform: translateX(414px); }
-          60%  { transform: translateX(391px); }
-          62%  { transform: translateX(368px); }
-          64%  { transform: translateX(345px); }
-          66%  { transform: translateX(322px); }
-          68%  { transform: translateX(299px); }
-          70%  { transform: translateX(276px); }
-          72%  { transform: translateX(253px); }
-          74%  { transform: translateX(230px); }
-          76%  { transform: translateX(207px); }
-          78%  { transform: translateX(184px); }
-          80%  { transform: translateX(161px); }
-          82%  { transform: translateX(138px); }
-          84%  { transform: translateX(115px); }
-          86%  { transform: translateX(92px); }
-          88%  { transform: translateX(69px); }
-          90%  { transform: translateX(46px); }
-          92%  { transform: translateX(23px); }
-          94%  { transform: translateX(0px); }
-          100% { transform: translateX(0px); }
-        }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50%      { opacity: 0; }
-        }
-      ]]>
-    </style>
-  </defs>
-
-  <!-- BASE -->
-  <rect width="900" height="300" fill="#0D1117"/>
-  <rect width="900" height="300" fill="url(#g)" opacity="0.55"/>
-  
-  <!-- Scanner beam -->
-  <rect x="0" y="-60" width="900" height="120" fill="url(#sg)" opacity="0.8">
-    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,420" dur="5.5s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- FRAME -->
-  <rect x="0" y="0" width="4" height="300" fill="#3DDC97">
-    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
-  </rect>
-  <line x1="4" y1="1" x2="896" y2="1" stroke="#21262D" stroke-width="1"/>
-  <line x1="4" y1="299" x2="896" y2="299" stroke="#21262D" stroke-width="1"/>
-
-  <!-- STATUS BAR -->
-  <circle cx="28" cy="32" r="5" fill="#3DDC97">
-    <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite"/>
-    <animate attributeName="r" values="4;6.5;4" dur="1.6s" repeatCount="indefinite"/>
-  </circle>
-  <text x="41" y="37" font-family="Courier New,Courier,monospace" font-size="11" fill="#3DDC97" letter-spacing="1.5">SYSTEM ONLINE</text>
-  <text x="640" y="37" font-family="Courier New,Courier,monospace" font-size="10" fill="#2D333B" letter-spacing="0.5">PID:2026 MEM:∞ GPU:ACTIVE MODEL:BUILDING</text>
-
-  <!-- ===================== FULL NEURAL NETWORK ===================== -->
+  <!-- ══════════════════════════ NEURAL NETWORK (top-right) ══════════════════════════ -->
+  <!-- Outer pulse ring around hub -->
   <circle cx="820" cy="118" r="20" fill="none" stroke="#3DDC97" stroke-width="0.6">
-    <animate attributeName="r" values="16;25;16" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="16;25;16" dur="3s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
   </circle>
+
+  <!-- Hub -->
   <circle cx="820" cy="118" r="5.5" fill="none" stroke="#3DDC97" stroke-width="2">
-    <animate attributeName="r" values="4;8;4" dur="1.8s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="4;8;4"   dur="1.8s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/>
   </circle>
   <circle cx="820" cy="118" r="2" fill="#3DDC97">
     <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite"/>
   </circle>
+
+  <!-- Outer nodes -->
+  <!-- A 762,72 -->
   <circle cx="762" cy="72" r="4" fill="none" stroke="#58A6FF" stroke-width="1.5">
     <animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/>
   </circle>
+  <!-- B 835,52 -->
   <circle cx="835" cy="52" r="3.5" fill="#3DDC97">
-    <animate attributeName="r" values="2.5;5;2.5" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="2.5;5;2.5" dur="2s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
   </circle>
+  <!-- C 880,108 -->
   <circle cx="880" cy="108" r="4" fill="none" stroke="#3DDC97" stroke-width="1.5">
     <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.7s" repeatCount="indefinite"/>
   </circle>
+  <!-- D 858,168 -->
   <circle cx="858" cy="168" r="3" fill="#58A6FF">
-    <animate attributeName="r" values="2.5;4.5;2.5" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="r"       values="2.5;4.5;2.5" dur="2.4s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/>
   </circle>
+  <!-- E 790,185 -->
   <circle cx="790" cy="185" r="4" fill="none" stroke="#3DDC97" stroke-width="1.5">
     <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.1s" repeatCount="indefinite"/>
   </circle>
+  <!-- F 745,125 -->
   <circle cx="745" cy="125" r="3" fill="#58A6FF">
     <animate attributeName="opacity" values="0.5;1;0.5" dur="2.6s" repeatCount="indefinite"/>
   </circle>
+
+  <!-- Connections (outer ring) -->
   <g fill="none" stroke-width="0.7">
-    <line x1="762" y1="72" x2="835" y2="52" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.05;0.4;0.05" dur="2.2s" repeatCount="indefinite"/></line>
-    <line x1="835" y1="52" x2="880" y2="108" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.08;0.5;0.08" dur="2s" repeatCount="indefinite"/></line>
-    <line x1="880" y1="108" x2="858" y2="168" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.05;0.4;0.05" dur="2.7s" repeatCount="indefinite"/></line>
+    <line x1="762" y1="72"  x2="835" y2="52"  stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.05;0.4;0.05"  dur="2.2s" repeatCount="indefinite"/></line>
+    <line x1="835" y1="52"  x2="880" y2="108" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.08;0.5;0.08"  dur="2s"   repeatCount="indefinite"/></line>
+    <line x1="880" y1="108" x2="858" y2="168" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.05;0.4;0.05"  dur="2.7s" repeatCount="indefinite"/></line>
     <line x1="858" y1="168" x2="790" y2="185" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.08;0.45;0.08" dur="2.4s" repeatCount="indefinite"/></line>
     <line x1="790" y1="185" x2="745" y2="125" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.05;0.35;0.05" dur="3.1s" repeatCount="indefinite"/></line>
-    <line x1="745" y1="125" x2="762" y2="72" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.08;0.3;0.08" dur="2.6s" repeatCount="indefinite"/></line>
-    <line x1="762" y1="72" x2="820" y2="118" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.1;0.55;0.1" dur="1.8s" repeatCount="indefinite"/></line>
-    <line x1="880" y1="108" x2="820" y2="118" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.1;0.5;0.1" dur="2s" repeatCount="indefinite"/></line>
-    <line x1="858" y1="168" x2="820" y2="118" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.1;0.5;0.1" dur="2.4s" repeatCount="indefinite"/></line>
-    <line x1="745" y1="125" x2="820" y2="118" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.1;0.4;0.1" dur="2.6s" repeatCount="indefinite"/></line>
+    <line x1="745" y1="125" x2="762" y2="72"  stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.08;0.3;0.08"  dur="2.6s" repeatCount="indefinite"/></line>
+    <!-- Spokes to hub -->
+    <line x1="762" y1="72"  x2="820" y2="118" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.1;0.55;0.1" dur="1.8s" repeatCount="indefinite"/></line>
+    <line x1="880" y1="108" x2="820" y2="118" stroke="#3DDC97"><animate attributeName="stroke-opacity" values="0.1;0.5;0.1"  dur="2s"   repeatCount="indefinite"/></line>
+    <line x1="858" y1="168" x2="820" y2="118" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.1;0.5;0.1"  dur="2.4s" repeatCount="indefinite"/></line>
+    <line x1="745" y1="125" x2="820" y2="118" stroke="#58A6FF"><animate attributeName="stroke-opacity" values="0.1;0.4;0.1"  dur="2.6s" repeatCount="indefinite"/></line>
   </g>
+
+  <!-- Signal travelers on connections -->
   <circle r="2.5" fill="#3DDC97"><animateMotion dur="2.2s" repeatCount="indefinite" path="M762,72 L835,52"/><animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite"/></circle>
-  <circle r="2" fill="#58A6FF"><animateMotion dur="2s" repeatCount="indefinite" begin="1s" path="M835,52 L880,108"/><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/></circle>
-  <circle r="2" fill="#3DDC97"><animateMotion dur="2.7s" repeatCount="indefinite" begin="0.6s" path="M880,108 L858,168"/><animate attributeName="opacity" values="0;1;0" dur="2.7s" repeatCount="indefinite" begin="0.6s"/></circle>
-  <circle r="2" fill="#3DDC97"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s" path="M745,125 L820,118"/><animate attributeName="opacity" values="0;0.9;0" dur="1.8s" repeatCount="indefinite" begin="0.9s"/></circle>
+  <circle r="2"   fill="#58A6FF"><animateMotion dur="2s"   repeatCount="indefinite" begin="1s"   path="M835,52 L880,108"/><animate attributeName="opacity" values="0;1;0" dur="2s"   repeatCount="indefinite" begin="1s"/></circle>
+  <circle r="2"   fill="#3DDC97"><animateMotion dur="2.7s" repeatCount="indefinite" begin="0.6s" path="M880,108 L858,168"/><animate attributeName="opacity" values="0;1;0" dur="2.7s" repeatCount="indefinite" begin="0.6s"/></circle>
+  <circle r="2"   fill="#3DDC97"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s" path="M745,125 L820,118"/><animate attributeName="opacity" values="0;0.9;0" dur="1.8s" repeatCount="indefinite" begin="0.9s"/></circle>
   <circle r="1.5" fill="#58A6FF"><animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s" path="M820,118 L858,168"/><animate attributeName="opacity" values="0;0.8;0" dur="2.4s" repeatCount="indefinite" begin="1.2s"/></circle>
 
-  <!-- CIRCUIT TRACES -->
+  <!-- ══════════════════════════ CIRCUIT TRACES (bottom-left) ══════════════════════════ -->
   <g stroke="#3DDC97" stroke-width="0.8" fill="none" opacity="0.1">
     <polyline points="4,240 68,240 68,262 155,262"/>
     <polyline points="4,205 45,205 45,220 100,220"/>
-    <circle cx="68" cy="240" r="2.5" fill="#3DDC97" opacity="1"/>
-    <circle cx="45" cy="205" r="2" fill="#3DDC97" opacity="1"/>
+    <circle cx="68"  cy="240" r="2.5" fill="#3DDC97" opacity="1"/>
+    <circle cx="45"  cy="205" r="2"   fill="#3DDC97" opacity="1"/>
     <circle cx="155" cy="262" r="1.5" fill="#3DDC97" opacity="1"/>
     <circle cx="100" cy="220" r="1.5" fill="#3DDC97" opacity="1"/>
   </g>
+  <!-- Circuit signal dots -->
   <circle r="2" fill="#3DDC97"><animateMotion dur="4.2s" repeatCount="indefinite" path="M4,240 L68,240 L68,262 L155,262"/><animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;0.05;0.2;0.85;1" dur="4.2s" repeatCount="indefinite"/></circle>
   <circle r="1.5" fill="#3DDC97"><animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M4,205 L45,205 L45,220 L100,220"/><animate attributeName="opacity" values="0;0;0.8;0.8;0" keyTimes="0;0.05;0.2;0.85;1" dur="3s" repeatCount="indefinite" begin="1.5s"/></circle>
 
-  <!-- ===================== NAME (SMIL for correct reverse erase) ===================== -->
-  <g font-family="Courier New,Courier,monospace" font-size="38" font-weight="900" fill="#E6EDF3" filter="url(#gf1)">
-    <text x="28"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.04;0.44;0.92;1" dur="6.8s" repeatCount="indefinite"/>M</text>
-    <text x="51"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.06;0.44;0.90;1" dur="6.8s" repeatCount="indefinite"/>U</text>
-    <text x="74"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.08;0.44;0.88;1" dur="6.8s" repeatCount="indefinite"/>N</text>
-    <text x="97"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.10;0.44;0.86;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="120" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.10;0.12;0.44;0.84;1" dur="6.8s" repeatCount="indefinite"/>G</text>
-    <text x="143" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.14;0.44;0.82;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="166" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.14;0.16;0.44;0.80;1" dur="6.8s" repeatCount="indefinite"/>L</text>
-    <text x="189" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.18;0.44;0.78;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="212" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.18;0.20;0.44;0.76;1" dur="6.8s" repeatCount="indefinite"/> </text>
-    <text x="235" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.22;0.44;0.74;1" dur="6.8s" repeatCount="indefinite"/>S</text>
-    <text x="258" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.22;0.24;0.44;0.72;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="281" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.44;0.70;1" dur="6.8s" repeatCount="indefinite"/>I</text>
-    <text x="304" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.26;0.28;0.44;0.68;1" dur="6.8s" repeatCount="indefinite"/> </text>
-    <text x="327" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.30;0.44;0.66;1" dur="6.8s" repeatCount="indefinite"/>H</text>
-    <text x="350" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.30;0.32;0.44;0.64;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="373" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.32;0.34;0.44;0.62;1" dur="6.8s" repeatCount="indefinite"/>N</text>
-    <text x="396" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.34;0.36;0.44;0.60;1" dur="6.8s" repeatCount="indefinite"/>I</text>
-    <text x="419" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.36;0.38;0.44;0.58;1" dur="6.8s" repeatCount="indefinite"/>S</text>
-    <text x="442" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.38;0.40;0.44;0.56;1" dur="6.8s" repeatCount="indefinite"/>H</text>
+  <!-- ══════════════════════════ IDENTITY TEXT WITH TYPING EFFECT ══════════════════════════ -->
+  <clipPath id="type-clip">
+    <rect x="28" y="100" height="80" fill="#fff">
+      <animate attributeName="width"
+        dur="4.56s"
+        repeatCount="indefinite"
+        calcMode="discrete"
+        keyTimes="0.0;0.0548;0.0789;0.1031;0.1272;0.1513;0.1754;0.1996;0.2237;0.2478;0.2719;0.2961;0.3202;0.3443;0.3684;0.3925;0.4167;0.4408;0.4649;0.489;0.5132;0.5373;0.5614;0.5855;0.7281;0.7379;0.7478;0.7577;0.7675;0.7774;0.7873;0.7971;0.807;0.8169;0.8268;0.8366;0.8465;0.8564;0.8662;0.8761;0.886;0.8958;0.9057;0.9156;0.9254;0.9353;0.9452;1"
+        values="0.0;0.0;28.4;54.8;81.2;107.6;134.0;160.4;186.8;213.2;239.6;266.0;292.4;318.8;345.2;371.6;398.0;424.4;450.8;477.2;503.6;530.0;556.4;582.8;582.8;556.4;530.0;503.6;477.2;450.8;424.4;398.0;371.6;345.2;318.8;292.4;266.0;239.6;213.2;186.8;160.4;134.0;107.6;81.2;54.8;28.4;0.0;0.0"/>
+    </rect>
+  </clipPath>
+
+  <!-- Clipped typed text -->
+  <g clip-path="url(#type-clip)">
+    <text x="28" y="168"
+      font-family="Courier New,Courier,monospace"
+      font-size="44"
+      font-weight="900"
+      letter-spacing="0">
+      <tspan fill="#E6EDF3" filter="url(#gf1)">MUNAGALA SAI HANISH</tspan><tspan fill="#3DDC97" filter="url(#gf2)">.AI</tspan>
+    </text>
   </g>
 
-  <g font-family="Courier New,Courier,monospace" font-size="38" font-weight="900" fill="#3DDC97" filter="url(#gf2)">
-    <text x="465" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40;0.42;0.44;0.54;1" dur="6.8s" repeatCount="indefinite"/>.</text>
-    <text x="488" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.44;0.44;0.52;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="511" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.44;0.46;0.44;0.50;1" dur="6.8s" repeatCount="indefinite"/>I</text>
-  </g>
-
-  <!-- CURSOR -->
-  <rect x="28" y="128" width="11" height="42" fill="#3DDC97" class="cursor"/>
+  <!-- Real-time typing cursor -->
+  <rect y="126" width="10" height="46" fill="#3DDC97" filter="url(#gf2)">
+    <animate attributeName="x"
+      dur="4.56s"
+      repeatCount="indefinite"
+      calcMode="discrete"
+      keyTimes="0.0;0.0548;0.0789;0.1031;0.1272;0.1513;0.1754;0.1996;0.2237;0.2478;0.2719;0.2961;0.3202;0.3443;0.3684;0.3925;0.4167;0.4408;0.4649;0.489;0.5132;0.5373;0.5614;0.5855;0.7281;0.7379;0.7478;0.7577;0.7675;0.7774;0.7873;0.7971;0.807;0.8169;0.8268;0.8366;0.8465;0.8564;0.8662;0.8761;0.886;0.8958;0.9057;0.9156;0.9254;0.9353;0.9452;1"
+      values="28.0;28.0;56.4;82.8;109.2;135.6;162.0;188.4;214.8;241.2;267.6;294.0;320.4;346.8;373.2;399.6;426.0;452.4;478.8;505.2;531.6;558.0;584.4;610.8;610.8;584.4;558.0;531.6;505.2;478.8;452.4;426.0;399.6;373.2;346.8;320.4;294.0;267.6;241.2;214.8;188.4;162.0;135.6;109.2;82.8;56.4;28.0;28.0"/>
+    <animate attributeName="opacity" values="1;1;0;0;1" dur="0.8s" repeatCount="indefinite"/>
+  </rect>
 
   <!-- Tagline -->
-  <text x="28" y="208" font-family="Courier New,Courier,monospace" font-size="13" fill="#7D8590" letter-spacing="2.5">
-    EMERGING AI ENGINEER · BUILDING INTELLIGENT SYSTEMS
-  </text>
+  <text x="28" y="218"
+    font-family="Courier New,Courier,monospace"
+    font-size="13"
+    fill="#7D8590"
+    letter-spacing="2.5">EMERGING AI ENGINEER  ·  BUILDING INTELLIGENT SYSTEMS</text>
 
-  <!-- Skills -->
-  <text x="28" y="250" font-family="Courier New,Courier,monospace" font-size="11" fill="#3DDC97" opacity="0.85" letter-spacing="1.2">
-    [ RAG · LLMs · RETRIEVAL · VECTOR_SEARCH · EMBEDDINGS · PYTHON · AGENTIC_AI ]
-  </text>
+  <!-- Concept tags row -->
+  <text x="28" y="260"
+    font-family="Courier New,Courier,monospace"
+    font-size="11"
+    fill="#3DDC97"
+    opacity="0.85"
+    letter-spacing="1.2">[ RAG · LLMs · RETRIEVAL · VECTOR_SEARCH · EMBEDDINGS · PYTHON ]</text>
 
-  <!-- Version -->
-  <text x="810" y="293" font-family="Courier New,monospace" font-size="9" fill="#2D333B">v2026.1 // MunagalaSaiHanish</text>
-</svg>
-  <!-- ===================== NAME (SMIL for correct reverse erase) ===================== -->
-  <g font-family="Courier New,Courier,monospace" font-size="38" font-weight="900" fill="#E6EDF3" filter="url(#gf1)">
-    <text x="28"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.04;0.44;0.92;1" dur="6.8s" repeatCount="indefinite"/>M</text>
-    <text x="51"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.06;0.44;0.90;1" dur="6.8s" repeatCount="indefinite"/>U</text>
-    <text x="74"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.08;0.44;0.88;1" dur="6.8s" repeatCount="indefinite"/>N</text>
-    <text x="97"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.10;0.44;0.86;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="120" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.10;0.12;0.44;0.84;1" dur="6.8s" repeatCount="indefinite"/>G</text>
-    <text x="143" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.14;0.44;0.82;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="166" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.14;0.16;0.44;0.80;1" dur="6.8s" repeatCount="indefinite"/>L</text>
-    <text x="189" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.18;0.44;0.78;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="212" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.18;0.20;0.44;0.76;1" dur="6.8s" repeatCount="indefinite"/> </text>
-    <text x="235" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.22;0.44;0.74;1" dur="6.8s" repeatCount="indefinite"/>S</text>
-    <text x="258" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.22;0.24;0.44;0.72;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="281" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.44;0.70;1" dur="6.8s" repeatCount="indefinite"/>I</text>
-    <text x="304" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.26;0.28;0.44;0.68;1" dur="6.8s" repeatCount="indefinite"/> </text>
-    <text x="327" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.30;0.44;0.66;1" dur="6.8s" repeatCount="indefinite"/>H</text>
-    <text x="350" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.30;0.32;0.44;0.64;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="373" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.32;0.34;0.44;0.62;1" dur="6.8s" repeatCount="indefinite"/>N</text>
-    <text x="396" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.34;0.36;0.44;0.60;1" dur="6.8s" repeatCount="indefinite"/>I</text>
-    <text x="419" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.36;0.38;0.44;0.58;1" dur="6.8s" repeatCount="indefinite"/>S</text>
-    <text x="442" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.38;0.40;0.44;0.56;1" dur="6.8s" repeatCount="indefinite"/>H</text>
-  </g>
-
-  <g font-family="Courier New,Courier,monospace" font-size="38" font-weight="900" fill="#3DDC97" filter="url(#gf2)">
-    <text x="465" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40;0.42;0.44;0.54;1" dur="6.8s" repeatCount="indefinite"/>.</text>
-    <text x="488" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.44;0.44;0.52;1" dur="6.8s" repeatCount="indefinite"/>A</text>
-    <text x="511" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.44;0.46;0.44;0.50;1" dur="6.8s" repeatCount="indefinite"/>I</text>
-  </g>
-
-  <!-- CURSOR -->
-  <rect x="28" y="128" width="11" height="42" fill="#3DDC97" class="cursor"/>
-
-  <!-- Tagline -->
-  <text x="28" y="208" font-family="Courier New,Courier,monospace" font-size="13" fill="#7D8590" letter-spacing="2.5">
-    EMERGING AI ENGINEER · BUILDING INTELLIGENT SYSTEMS
-  </text>
-
-  <!-- Skills -->
-  <text x="28" y="250" font-family="Courier New,Courier,monospace" font-size="11" fill="#3DDC97" opacity="0.85" letter-spacing="1.2">
-    [ RAG · LLMs · RETRIEVAL · VECTOR_SEARCH · EMBEDDINGS · PYTHON · AGENTIC_AI ]
-  </text>
-
-  <!-- Version -->
+  <!-- Version stamp -->
   <text x="810" y="293" font-family="Courier New,monospace" font-size="9" fill="#2D333B">v2026.1 // MunagalaSaiHanish</text>
 </svg>
