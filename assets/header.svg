@@ -106,7 +106,7 @@
   <circle r="2" fill="#3DDC97"><animateMotion dur="4.2s" repeatCount="indefinite" path="M4,240 L68,240 L68,262 L155,262"/><animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;0.05;0.2;0.85;1" dur="4.2s" repeatCount="indefinite"/></circle>
   <circle r="1.5" fill="#3DDC97"><animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M4,205 L45,205 L45,220 L100,220"/><animate attributeName="opacity" values="0;0;0.8;0.8;0" keyTimes="0;0.05;0.2;0.85;1" dur="3s" repeatCount="indefinite" begin="1.5s"/></circle>
 
-  <!-- ===================== NAME + CURSOR ===================== -->
+  <!-- ===================== NAME ===================== -->
   <g font-family="Courier New,Courier,monospace" font-size="38" font-weight="900" fill="#E6EDF3" filter="url(#gf1)">
     <text x="28"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.02;0.04;0.45;0.93;1" dur="6.5s" repeatCount="indefinite"/>M</text>
     <text x="51"  y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.06;0.45;0.91;1" dur="6.5s" repeatCount="indefinite"/>U</text>
@@ -135,7 +135,7 @@
     <text x="511" y="168" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.44;0.46;0.45;0.51;1" dur="6.5s" repeatCount="indefinite"/>I</text>
   </g>
 
-  <!-- CURSOR - Fixed and working -->
+  <!-- CURSOR (now correctly moving) -->
   <rect x="28" y="128" width="11" height="42" fill="#3DDC97">
     <animate 
       attributeName="x"
