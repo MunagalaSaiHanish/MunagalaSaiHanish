@@ -176,10 +176,10 @@
   <!-- Concept tags row -->
   <text x="28" y="260"
     font-family="Courier New,Courier,monospace"
-    font-size="11"
+    font-size="10.5"
     fill="#3DDC97"
     opacity="0.85"
-    letter-spacing="1.2">[ RAG · LLMs · RETRIEVAL · VECTOR_SEARCH · EMBEDDINGS · PYTHON ]</text>
+    letter-spacing="1.0">[ AGENTIC_AI · RAG · LLMs · RETRIEVAL · VECTOR_SEARCH · EMBEDDINGS · PYTHON ]</text>
 
   <!-- Version stamp -->
   <text x="810" y="293" font-family="Courier New,monospace" font-size="9" fill="#2D333B">v2026.1 // MunagalaSaiHanish</text>
